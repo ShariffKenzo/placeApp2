@@ -23,45 +23,45 @@ import HomeScreen from "./HomeScreen";
 import { wishlist } from "../assets/wishlist";
 
 function WishlistScreen({ navigation }) {
-	if (wishlist.length === 0) {
-		return (
-			<View style={styles.container}>
-				<Text>You have no wishlisted locations</Text>
-			</View>
-		);
-	} else {
-		return (
-			<View style={styles.container}>
-				<ScrollView>
-					<View style={{ alignItems: "center" }}>
-						<TouchableOpacity
-							onPress={() => {
-								navigation.navigate("Gallop Kranji Farm Resort");
-							}}
-						>
-							<Card style={styles.cardStyle}>
-								<Card.Content>
-									<Title>{locations[0].name}</Title>
+	// if (wishlist.length === 0) {
+	// 	return (
+	// 		<View style={styles.container}>
+	// 			<Text>You have no wishlisted locations</Text>
+	// 		</View>
+	// 	);
+	// } else {
+	return (
+		<View style={styles.container}>
+			<ScrollView>
+				<View style={{ alignItems: "center" }}>
+					<TouchableOpacity
+						onPress={() => {
+							navigation.navigate("Gallop Kranji Farm Resort");
+						}}
+					>
+						<Card style={styles.cardStyle}>
+							<Card.Content>
+								<Title>{locations[0].name}</Title>
 
-									<Paragraph>{locations[0].shortDesc}</Paragraph>
-								</Card.Content>
-								<Card.Cover source={{ uri: locations[0].imageUri }} />
-								<Card.Actions>
-									<IconButton
-										icon="star"
-										animated={true}
-										color={"rgba(255, 190, 6, 0.83)"}
-										size={20}
-										onPress={() => {}}
-									/>
-								</Card.Actions>
-							</Card>
-						</TouchableOpacity>
-					</View>
-				</ScrollView>
-			</View>
-		);
-	}
+								<Paragraph>{locations[0].shortDesc}</Paragraph>
+							</Card.Content>
+							<Card.Cover source={{ uri: locations[0].imageUri }} />
+							<Card.Actions>
+								<IconButton
+									icon="star"
+									animated={true}
+									color={"rgba(255, 190, 6, 0.83)"}
+									size={20}
+									onPress={() => {}}
+								/>
+							</Card.Actions>
+						</Card>
+					</TouchableOpacity>
+				</View>
+			</ScrollView>
+		</View>
+	);
+	// }
 }
 
 // function EventsSecondScreen({ navigation }) {
@@ -88,7 +88,7 @@ const Stack = createStackNavigator();
 export default function eventstack() {
 	return (
 		<Stack.Navigator>
-			<Stack.Screen name="Events" component={WishlistScreen} />
+			<Stack.Screen name="Wishlist" component={WishlistScreen} />
 			{/* <Stack.Screen name="Events2" component={EventsSecondScreen} /> */}
 		</Stack.Navigator>
 	);

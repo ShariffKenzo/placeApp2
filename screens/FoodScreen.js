@@ -17,7 +17,7 @@ function FoodScreen({ navigation }) {
 		<View style={styles.container}>
 			<TouchableOpacity
 				style={styles.button}
-				onPress={() => navigation.navigate("Hawker Centres")}
+				onPress={() => navigation.navigate("Hawker Food")}
 			>
 				<Text style={styles.buttonText}>Hawker Food</Text>
 
@@ -50,8 +50,8 @@ const Stack = createStackNavigator();
 export default function contactstack() {
 	return (
 		<Stack.Navigator mode="modal">
-			<Stack.Screen name="Singapore food" component={FoodScreen} />
-			<Stack.Screen name="Hawker Centres" component={HawkerScreen} />
+			<Stack.Screen name="Singapore Food" component={FoodScreen} />
+			<Stack.Screen name="Hawker Food" component={HawkerScreen} />
 			<Stack.Screen name="Restaurants" component={RestaurantScreen} />
 		</Stack.Navigator>
 	);
